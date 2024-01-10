@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_put_hexa_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 21:41:08 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 16:16:03 by recherra         ###   ########.fr       */
+/*   Created: 2024/01/10 16:17:05 by recherra          #+#    #+#             */
+/*   Updated: 2024/01/10 17:47:42 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *s)
+int ft_put_hexa_base(unsigned long int num, char formatter)
 {
-    int i;
     int j;
+    char *base;
 
+    base = NULL;
+
+    if (formatter == 'x')
+        base = "0123456789abcdef";
+    else if (formatter == 'X')
+        base = "0123456789ABCDEF";
     j = 0;
-    i = 0;
-    if (!s)
-    {
-        return j += write(1, "(null)", 6);
-    }
-    while (s[i])
-    {
-        j += ft_putchar(s[i]);
-        i++;
-    }
-
-    return (j);
+    if (num >= 16)
+        j += ft_put_hexa_base(num / 16, formatter);
+    j += write(1, &base[num % 16], 1);
+    return j;
 }

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 21:41:08 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 16:16:03 by recherra         ###   ########.fr       */
+/*   Created: 2024/01/10 12:24:17 by recherra          #+#    #+#             */
+/*   Updated: 2024/01/10 16:12:49 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *s)
+int ft_putnbr(int i)
 {
-    int i;
+    long nbr;
     int j;
 
     j = 0;
-    i = 0;
-    if (!s)
+    nbr = i;
+    if (nbr < 0)
     {
-        return j += write(1, "(null)", 6);
+        nbr = -nbr;
+        j += write(1, "-", 1);
     }
-    while (s[i])
+    if (nbr > 9)
     {
-        j += ft_putchar(s[i]);
-        i++;
+        j += ft_putnbr(nbr / 10);
+        j += ft_putchar((nbr % 10) + '0');
     }
-
+    else
+        j += ft_putchar(nbr + '0');
     return (j);
 }
