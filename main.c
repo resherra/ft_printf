@@ -22,7 +22,7 @@ int main(void)
     // printf(" |%d| \n", ft_putnbr(-1337));
     // %u
     // printf(" |%d| \n", ft_put_unsigned_nbr(-1));
-    // %x && %X && %p
+    // %x && %X
     // printf(" |%d| \n", ft_put_hexa_base(42, 'x'));
     // %s
     // printf(" |%d| \n", ft_putstr(NULL));
@@ -31,4 +31,11 @@ int main(void)
     // %p
     // char *str = "hell";
     // printf(" |%d| \n", ft_put_add((unsigned long)str));
+    // printf("orig\n");
+    // printf("%d\n", printf("%x\n", 0));
+    // printf("mimic\n");
+    // printf("%d\n", ft_printf("%p\n", 0));
+    // ft_printf("%");
+    printf("%d\n", ft_printf("%d %s %", 13, "hello"));
+    printf("%d\n", printf("%d %s %", 13, "hello"));
 }

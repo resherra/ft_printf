@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_hexa_base.c                                 :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 16:17:05 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 19:50:28 by recherra         ###   ########.fr       */
+/*   Created: 2024/01/10 18:09:11 by recherra          #+#    #+#             */
+/*   Updated: 2024/01/10 20:02:40 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_put_hexa_base(unsigned int num, char formatter)
+int ft_printf(const char *str, ...)
 {
     int j;
-    char *base;
+    int i;
+    va_list ptr;
 
-    base = NULL;
-
-    if (formatter == 'x')
-        base = "0123456789abcdef";
-    else if (formatter == 'X')
-        base = "0123456789ABCDEF";
     j = 0;
-    if (num >= 16)
-        j += ft_put_hexa_base(num / 16, formatter);
-    j += write(1, &base[num % 16], 1);
+    i = 0;
+    va_start(ptr, str);
+    while (str[i])
+    {
+        if (str[i] == '%')
+        {
+            if (str[i + 1] == '%')
+                j += write(1, "%", 1);
+            else if (!str[i + 1])
+                return j;
+            j += ft_checker(str[++i], ptr);
+        }
+        else
+            j += write(1, &str[i], 1);
+        i++;
+    }
     return j;
 }
