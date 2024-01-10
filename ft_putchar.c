@@ -6,11 +6,9 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:19:35 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 15:56:49 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:32:57 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {
