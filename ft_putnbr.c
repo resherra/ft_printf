@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:24:17 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 20:33:29 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:42:35 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_putnbr(int i)
 	if (nbr < 0)
 	{
 		nbr = -nbr;
-		j += write(1, "-", 1);
+		j += ft_putchar('-');
 	}
 	if (nbr > 9)
 	{

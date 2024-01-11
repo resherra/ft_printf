@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:17:05 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 20:19:48 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:42:07 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_put_hexa_base(unsigned int num, char formatter)
 	j = 0;
 	if (num >= 16)
 		j += ft_put_hexa_base(num / 16, formatter);
-	j += write(1, &base[num % 16], 1);
+	j += ft_putchar(base[num % 16]);
 	return (j);
 }

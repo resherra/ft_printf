@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 21:41:08 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 20:34:19 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:10:06 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_putstr(char *s)
 	i = 0;
 	if (!s)
 	{
-		return (j += write(1, "(null)", 6));
+		return (j += ft_putstr("(null)"));
 	}
 	while (s[i])
 	{

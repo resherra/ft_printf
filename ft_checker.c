@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:21:31 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 20:18:53 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:40:11 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int	ft_checker(char c, va_list ptr)
 		j += ft_putchar(va_arg(ptr, int));
 	else if (c == 'p')
 		j += ft_put_add(va_arg(ptr, void *));
+	else
+		j += ft_putchar(c);
 	return (j);
 }

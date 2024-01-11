@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:09:11 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/10 20:11:11 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:39:40 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,12 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			if (str[i + 1] == '%')
-				j += write(1, "%", 1);
-			else if (!str[i + 1])
+			if (!str[i + 1])
 				return (j);
 			j += ft_checker(str[++i], ptr);
 		}
 		else
-			j += write(1, &str[i], 1);
+			j += ft_putchar(str[i]);
 		i++;
 	}
 	return (j);
