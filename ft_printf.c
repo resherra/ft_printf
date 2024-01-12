@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:09:11 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/11 19:39:40 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:06:08 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	ft_printf(const char *str, ...)
 			j += ft_putchar(str[i]);
 		i++;
 	}
+	va_end(ptr);
 	return (j);
 }
