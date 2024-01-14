@@ -6,7 +6,7 @@
 #    By: recherra <recherra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 19:55:41 by recherra          #+#    #+#              #
-#    Updated: 2024/01/12 20:08:35 by recherra         ###   ########.fr        #
+#    Updated: 2024/01/14 10:14:58 by recherra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = libftprintf.a
 
 all: ${NAME}
 
-${NAME}: ${OBJ} ft_printf.h
+${NAME}: ${OBJ}
 	ar -rcs ${NAME} ${OBJ}
 	
 clean:
