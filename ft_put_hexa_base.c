@@ -6,7 +6,7 @@
 /*   By: recherra <recherra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:17:05 by recherra          #+#    #+#             */
-/*   Updated: 2024/01/14 10:16:51 by recherra         ###   ########.fr       */
+/*   Updated: 2024/01/14 10:38:58 by recherra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_put_hexa_base(unsigned int num, char formatter)
 	int		j;
 	char	*base;
 
-	base = 0;
+	base = "";
 	if (formatter == 'x')
 		base = "0123456789abcdef";
 	else if (formatter == 'X')
