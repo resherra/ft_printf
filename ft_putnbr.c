@@ -33,3 +33,4 @@ int	ft_putnbr(int i)
 		j += ft_putchar(nbr + '0');
 	return (j);
 }
+ 
